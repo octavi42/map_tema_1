@@ -16,7 +16,7 @@ public class Zahlen_Operations {
         int min_zahl = zahlen[0];
 
         for (int i = 1; i < zahlen.length; i++) {
-            if (zahlen[i] > min_zahl) {
+            if (zahlen[i] < min_zahl) {
                 min_zahl = zahlen[i];
             }
         }

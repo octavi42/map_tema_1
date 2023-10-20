@@ -1,57 +1,60 @@
+import java.util.ArrayList;
+
 public class Notes_Operations {
 
-    static int[] low_grades(int[] noten) {
-        int [] final_grades = new int[noten.length];
-        for (int i = 0; i < noten.length; i++) {
-            if (noten[i] < 38) {
-                final_grades[i] = noten[i];
+    static ArrayList<Integer> low_grades(ArrayList<Integer> noten) {
+        ArrayList<Integer> finalGrades = new ArrayList<>();
+        for (int grade : noten) {
+            if (grade < 38) {
+                finalGrades.add(grade);
             }
         }
-
-        return final_grades;
+        return finalGrades;
     }
 
-
-    // a method that returns the average grade
-    static double average_grade(int[] noten) {
-        int sum = 0;
-        for (int i = 0; i < noten.length; i++) {
-            sum += noten[i];
+    static double average_grade(ArrayList<Integer> noten) {
+        if (noten.isEmpty()) {
+            return 0.0; // Handle the case where the ArrayList is empty.
         }
 
-        return (double) sum / noten.length;
+        int sum = 0;
+        for (int grade : noten) {
+            sum += grade;
+        }
+
+        return (double) sum / noten.size();
     }
 
     // method that returns the rounded grades
-    static int[] rounded_grades(int[] noten) {
-        int[] rounded_grades = new int[noten.length];
-        for(int i = 0; i < noten.length; i++) {
+    static ArrayList<Integer> rounded_grades(ArrayList<Integer> grades) {
+        ArrayList<Integer> roundedGrades = new ArrayList<>();
 
-            // find the next multiple of 5 ot the grade
-            int next_multiple = (int) (noten[i] / 5) * 5;
-            if (noten[i] - next_multiple < 3) {
-                rounded_grades[i] = next_multiple;
-            } else {
-                rounded_grades[i] = noten[i];
-            }
+        for (int grade : grades) {
+            // Find the next multiple of 5 for the grade
+            int nextMultiple = (grade + 4) / 5 * 5;
+            roundedGrades.add(nextMultiple);
         }
 
-        return rounded_grades;
+        return roundedGrades;
     }
 
 
     // method that returns the maximal rounded grades
-    static int maximal_grade(int[] noten) {
-        noten = rounded_grades(noten);
-        int max_grade = noten[0];
+    static int maximal_grade(ArrayList<Integer> noten) {
+        if (noten.isEmpty()) {
+            return -1; // Handle the case where the ArrayList is empty.
+        }
 
-        for (int i = 1; i < noten.length; i++) {
-            if (noten[i] > max_grade) {
-                max_grade = noten[i];
+        ArrayList<Integer> roundedGrades = rounded_grades(noten);
+        int maxGrade = roundedGrades.get(0);
+
+        for (int i = 1; i < roundedGrades.size(); i++) {
+            if (roundedGrades.get(i) > maxGrade) {
+                maxGrade = roundedGrades.get(i);
             }
         }
 
-        return max_grade;
+        return maxGrade;
     }
 
 }
