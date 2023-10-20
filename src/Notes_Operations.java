@@ -26,13 +26,25 @@ public class Notes_Operations {
     }
 
     // method that returns the rounded grades
-    static ArrayList<Integer> rounded_grades(ArrayList<Integer> grades) {
+    static ArrayList<Integer> rounded_grades(ArrayList<Integer> noten) {
         ArrayList<Integer> roundedGrades = new ArrayList<>();
 
-        for (int grade : grades) {
+        for (int grade : noten) {
             // Find the next multiple of 5 for the grade
-            int nextMultiple = (grade + 4) / 5 * 5;
-            roundedGrades.add(nextMultiple);
+            int nextMultiple = (int) (grade / 5) * 5 + 5;
+
+            System.out.println(nextMultiple);
+            System.out.println(grade);
+
+
+            System.out.println(grade - nextMultiple);
+            System.out.println();
+
+            if (grade - nextMultiple > -3) {
+                roundedGrades.add(nextMultiple);
+            } else {
+                roundedGrades.add(grade);
+            }
         }
 
         return roundedGrades;

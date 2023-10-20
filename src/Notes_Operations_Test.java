@@ -44,7 +44,7 @@ public class Notes_Operations_Test {
 
         ArrayList<Integer> expected = new ArrayList<>();
         expected.add(75);
-        expected.add(70);
+        expected.add(67);
         expected.add(40);
         expected.add(45);
 
@@ -59,7 +59,7 @@ public class Notes_Operations_Test {
         input.add(67);
         input.add(92);
 
-        int expected = 95;
+        int expected = 92;
 
         assertEquals(expected, Notes_Operations.maximal_grade(input));
     }
