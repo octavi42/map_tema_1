@@ -33,13 +33,6 @@ public class Notes_Operations {
             // Find the next multiple of 5 for the grade
             int nextMultiple = (int) (grade / 5) * 5 + 5;
 
-            System.out.println(nextMultiple);
-            System.out.println(grade);
-
-
-            System.out.println(grade - nextMultiple);
-            System.out.println();
-
             if (grade - nextMultiple > -3) {
                 roundedGrades.add(nextMultiple);
             } else {

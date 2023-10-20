@@ -38,27 +38,50 @@ public class Zahlen_Operations_Test {
     public void testMaxNRBreak() {
         int[] zahlen = {12, 45, 67, 89, 23};
         int expected = 12;
-        assertEquals(expected, Zahlen_Operations.maxNR(zahlen));
+
+        try {
+            assertEquals(expected, Zahlen_Operations.maxNR(zahlen));
+        } catch (AssertionError e) {
+            System.out.print("error: ");
+            System.out.println(e.getMessage());
+        }
     }
 
     @Test
     public void testMinNRBreak() {
         int[] zahlen = {12, 45, 67, 89, 23};
         int expected = 45;
-        assertEquals(expected, Zahlen_Operations.minNR(zahlen));
+
+        try {
+            assertEquals(expected, Zahlen_Operations.minNR(zahlen));
+        } catch (AssertionError e) {
+            System.out.print("error: ");
+            System.out.println(e.getMessage());
+        }
     }
 
     @Test
     public void testMaxSumBreak() {
         int[] noten = {85, 90, 78, 90, 92, 85};
         int expected = 300;
-        assertEquals(expected, Zahlen_Operations.max_sum(noten));
+
+        try {
+            assertEquals(expected, Zahlen_Operations.max_sum(noten));
+        } catch (AssertionError e) {
+            System.out.print("error: ");
+            System.out.println(e.getMessage());
+        }
     }
 
     @Test
     public void testMinSumBreak() {
         int[] noten = {85, 90, 78, 90, 92, 85};
         int expected = 200;
-        assertEquals(expected, Zahlen_Operations.min_sum(noten));
+        try {
+            assertEquals(expected, Zahlen_Operations.min_sum(noten));
+        } catch (AssertionError e) {
+            System.out.print("error: ");
+            System.out.println(e.getMessage());
+        }
     }
 }

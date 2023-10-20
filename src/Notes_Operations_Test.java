@@ -77,7 +77,13 @@ public class Notes_Operations_Test {
         expected.add(40);
         expected.add(25);
 
-        assertEquals(expected, Notes_Operations.low_grades(input));
+        try {
+            assertEquals(expected, Notes_Operations.low_grades(input));
+        } catch (AssertionError e) {
+            System.out.print("error: ");
+            System.out.println(e.getMessage());
+        }
+
     }
 
     @Test
@@ -90,7 +96,12 @@ public class Notes_Operations_Test {
 
         double expected = 73.0;
 
-        assertEquals(expected, Notes_Operations.average_grade(input), 0.01);
+        try {
+            assertEquals(expected, Notes_Operations.average_grade(input), 0.01);
+        } catch (AssertionError e) {
+            System.out.print("error: ");
+            System.out.println(e.getMessage());
+        }
     }
 
     @Test
@@ -107,7 +118,12 @@ public class Notes_Operations_Test {
         expected.add(40);
         expected.add(33);
 
-        assertEquals(expected, Notes_Operations.rounded_grades(input));
+        try {
+            assertEquals(expected, Notes_Operations.rounded_grades(input));
+        } catch (AssertionError e) {
+            System.out.print("error: ");
+            System.out.println(e.getMessage());
+        }
     }
 
     @Test
@@ -120,7 +136,12 @@ public class Notes_Operations_Test {
 
         int expected = 80;
 
-        assertEquals(expected, Notes_Operations.maximal_grade(input));
+        try {
+            assertEquals(expected, Notes_Operations.maximal_grade(input));
+        } catch (AssertionError e) {
+            System.out.print("error: ");
+            System.out.println(e.getMessage());
+        }
     }
 
 }

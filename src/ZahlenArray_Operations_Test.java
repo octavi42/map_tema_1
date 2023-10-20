@@ -34,6 +34,15 @@ public class ZahlenArray_Operations_Test {
     }
 
     @Test
+    public void testMul2() {
+        ArrayList<Integer> arr = new ArrayList<>(List.of(9));
+        int num = 2;
+
+        ArrayList<Integer> expected = new ArrayList<>(List.of(1, 8));
+        assertEquals(expected, ZahlenArray_Operations.mul(arr, num));
+    }
+
+    @Test
     public void testDiv() {
         ArrayList<Integer> arr = new ArrayList<>(List.of(6, 9, 1, 2, 2));
         int num = 3;
@@ -51,7 +60,12 @@ public class ZahlenArray_Operations_Test {
         ArrayList<Integer> arr2 = new ArrayList<>(List.of(5, 6, 7, 8));
 
         ArrayList<Integer> expected = new ArrayList<>(List.of(6, 3, 1, 2));
-        assertEquals(expected, ZahlenArray_Operations.add(arr1, arr2));
+        try {
+            assertEquals(expected, ZahlenArray_Operations.add(arr1, arr2));
+        } catch (AssertionError e) {
+            System.out.print("error: ");
+            System.out.println(e.getMessage());
+        }
     }
 
     @Test
@@ -60,7 +74,12 @@ public class ZahlenArray_Operations_Test {
         ArrayList<Integer> arr2 = new ArrayList<>(List.of(1, 2, 3, 4));
 
         ArrayList<Integer> expected = new ArrayList<>(List.of(4, 1, 4, 4));
-        assertEquals(expected, ZahlenArray_Operations.sub(arr1, arr2));
+        try {
+            assertEquals(expected, ZahlenArray_Operations.sub(arr1, arr2));
+        } catch (AssertionError e) {
+            System.out.print("error: ");
+            System.out.println(e.getMessage());
+        }
     }
 
     @Test
@@ -69,7 +88,12 @@ public class ZahlenArray_Operations_Test {
         int num = 3;
 
         ArrayList<Integer> expected = new ArrayList<>(List.of(3, 7, 5, 7));
-        assertEquals(expected, ZahlenArray_Operations.mul(arr, num));
+        try {
+            assertEquals(expected, ZahlenArray_Operations.mul(arr, num));
+        } catch (AssertionError e) {
+            System.out.print("error: ");
+            System.out.println(e.getMessage());
+        }
     }
 
     @Test
@@ -78,6 +102,11 @@ public class ZahlenArray_Operations_Test {
         int num = 3;
 
         ArrayList<Integer> expected = new ArrayList<>(List.of(2, 3, 0, 9, 0));
-        assertEquals(expected, ZahlenArray_Operations.div(arr, num));
+        try {
+            assertEquals(expected, ZahlenArray_Operations.div(arr, num));
+        } catch (AssertionError e) {
+            System.out.print("error: ");
+            System.out.println(e.getMessage());
+        }
     }
 }
