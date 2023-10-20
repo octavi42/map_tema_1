@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class Zahlen_Operations_Test {
 
@@ -39,12 +40,7 @@ public class Zahlen_Operations_Test {
         int[] zahlen = {12, 45, 67, 89, 23};
         int expected = 12;
 
-        try {
-            assertEquals(expected, Zahlen_Operations.maxNR(zahlen));
-        } catch (AssertionError e) {
-            System.out.print("error: ");
-            System.out.println(e.getMessage());
-        }
+        assertNotEquals(expected, Zahlen_Operations.maxNR(zahlen));
     }
 
     @Test
@@ -52,12 +48,7 @@ public class Zahlen_Operations_Test {
         int[] zahlen = {12, 45, 67, 89, 23};
         int expected = 45;
 
-        try {
-            assertEquals(expected, Zahlen_Operations.minNR(zahlen));
-        } catch (AssertionError e) {
-            System.out.print("error: ");
-            System.out.println(e.getMessage());
-        }
+        assertNotEquals(expected, Zahlen_Operations.minNR(zahlen));
     }
 
     @Test
@@ -65,23 +56,14 @@ public class Zahlen_Operations_Test {
         int[] noten = {85, 90, 78, 90, 92, 85};
         int expected = 300;
 
-        try {
-            assertEquals(expected, Zahlen_Operations.max_sum(noten));
-        } catch (AssertionError e) {
-            System.out.print("error: ");
-            System.out.println(e.getMessage());
-        }
+        assertNotEquals(expected, Zahlen_Operations.max_sum(noten));
     }
 
     @Test
     public void testMinSumBreak() {
         int[] noten = {85, 90, 78, 90, 92, 85};
         int expected = 200;
-        try {
-            assertEquals(expected, Zahlen_Operations.min_sum(noten));
-        } catch (AssertionError e) {
-            System.out.print("error: ");
-            System.out.println(e.getMessage());
-        }
+
+        assertNotEquals(expected, Zahlen_Operations.min_sum(noten));
     }
 }

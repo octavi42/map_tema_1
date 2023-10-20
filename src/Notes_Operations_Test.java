@@ -3,6 +3,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class Notes_Operations_Test {
 
@@ -77,12 +78,7 @@ public class Notes_Operations_Test {
         expected.add(40);
         expected.add(25);
 
-        try {
-            assertEquals(expected, Notes_Operations.low_grades(input));
-        } catch (AssertionError e) {
-            System.out.print("error: ");
-            System.out.println(e.getMessage());
-        }
+        assertNotEquals(expected, Notes_Operations.low_grades(input));
 
     }
 
@@ -96,12 +92,7 @@ public class Notes_Operations_Test {
 
         double expected = 73.0;
 
-        try {
-            assertEquals(expected, Notes_Operations.average_grade(input), 0.01);
-        } catch (AssertionError e) {
-            System.out.print("error: ");
-            System.out.println(e.getMessage());
-        }
+        assertNotEquals(expected, Notes_Operations.average_grade(input), 0.01);
     }
 
     @Test
@@ -118,12 +109,7 @@ public class Notes_Operations_Test {
         expected.add(40);
         expected.add(33);
 
-        try {
-            assertEquals(expected, Notes_Operations.rounded_grades(input));
-        } catch (AssertionError e) {
-            System.out.print("error: ");
-            System.out.println(e.getMessage());
-        }
+        assertNotEquals(expected, Notes_Operations.rounded_grades(input));
     }
 
     @Test
@@ -136,12 +122,7 @@ public class Notes_Operations_Test {
 
         int expected = 80;
 
-        try {
-            assertEquals(expected, Notes_Operations.maximal_grade(input));
-        } catch (AssertionError e) {
-            System.out.print("error: ");
-            System.out.println(e.getMessage());
-        }
+        assertNotEquals(expected, Notes_Operations.maximal_grade(input));
     }
 
 }

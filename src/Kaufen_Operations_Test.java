@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class Kaufen_Operations_Test {
 
@@ -58,12 +59,7 @@ public class Kaufen_Operations_Test {
     public void testBilligsteProduktBreak() {
         int cheapest = Kaufen_Operations.billigsteProdukt(products1);
 
-        try {
-            assertEquals(40, cheapest);
-        } catch (AssertionError e) {
-            System.out.print("error: ");
-            System.out.println(e.getMessage());
-        }
+        assertNotEquals(40, cheapest);
     }
 
     @Test
@@ -74,25 +70,15 @@ public class Kaufen_Operations_Test {
         productsList.add(products3);
 
         int mostExpensive = Kaufen_Operations.teursteProdukt(productsList);
-        try {
-            assertEquals(15, mostExpensive);
-        } catch (AssertionError e) {
-            System.out.print("error: ");
-            System.out.println(e.getMessage());
-        }
 
+        assertNotEquals(15, mostExpensive);
     }
 
     @Test
     public void testTeuersteBudgetBreak() {
         int mostExpensive = Kaufen_Operations.teuersteBudget(products1, 50);
 
-        try {
-            assertEquals(55, mostExpensive);
-        } catch (AssertionError e) {
-            System.out.print("error: ");
-            System.out.println(e.getMessage());
-        }
+        assertNotEquals(55, mostExpensive);
     }
 
     @Test
@@ -103,12 +89,7 @@ public class Kaufen_Operations_Test {
         productsList.add(products3);
 
         int totalPrice = Kaufen_Operations.budgetKaufen(productsList, 60);
-        try {
-            assertEquals(75, totalPrice);
-        } catch (AssertionError e) {
-            System.out.print("error: ");
-            System.out.println(e.getMessage());
-        }
 
+        assertNotEquals(75, totalPrice);
     }
 }

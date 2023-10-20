@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class ZahlenArray_Operations_Test {
 
@@ -60,12 +61,8 @@ public class ZahlenArray_Operations_Test {
         ArrayList<Integer> arr2 = new ArrayList<>(List.of(5, 6, 7, 8));
 
         ArrayList<Integer> expected = new ArrayList<>(List.of(6, 3, 1, 2));
-        try {
-            assertEquals(expected, ZahlenArray_Operations.add(arr1, arr2));
-        } catch (AssertionError e) {
-            System.out.print("error: ");
-            System.out.println(e.getMessage());
-        }
+
+        assertNotEquals(expected, ZahlenArray_Operations.add(arr1, arr2));
     }
 
     @Test
@@ -74,12 +71,8 @@ public class ZahlenArray_Operations_Test {
         ArrayList<Integer> arr2 = new ArrayList<>(List.of(1, 2, 3, 4));
 
         ArrayList<Integer> expected = new ArrayList<>(List.of(4, 1, 4, 4));
-        try {
-            assertEquals(expected, ZahlenArray_Operations.sub(arr1, arr2));
-        } catch (AssertionError e) {
-            System.out.print("error: ");
-            System.out.println(e.getMessage());
-        }
+
+        assertNotEquals(expected, ZahlenArray_Operations.sub(arr1, arr2));
     }
 
     @Test
@@ -88,12 +81,8 @@ public class ZahlenArray_Operations_Test {
         int num = 3;
 
         ArrayList<Integer> expected = new ArrayList<>(List.of(3, 7, 5, 7));
-        try {
-            assertEquals(expected, ZahlenArray_Operations.mul(arr, num));
-        } catch (AssertionError e) {
-            System.out.print("error: ");
-            System.out.println(e.getMessage());
-        }
+
+        assertNotEquals(expected, ZahlenArray_Operations.mul(arr, num));
     }
 
     @Test
@@ -102,11 +91,7 @@ public class ZahlenArray_Operations_Test {
         int num = 3;
 
         ArrayList<Integer> expected = new ArrayList<>(List.of(2, 3, 0, 9, 0));
-        try {
-            assertEquals(expected, ZahlenArray_Operations.div(arr, num));
-        } catch (AssertionError e) {
-            System.out.print("error: ");
-            System.out.println(e.getMessage());
-        }
+
+        assertNotEquals(expected, ZahlenArray_Operations.div(arr, num));
     }
 }
